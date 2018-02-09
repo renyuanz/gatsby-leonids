@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "Leonids powered Gatsby Starter Blog",
+    title: "Gatsby powered Leonids theme Starter Blog",
     author: "Renyuan Zou",
     job: "Web Developer",
-    bio: "coding"
+    bio: "A web developer who loves design awesome things. Coding Vue.js at S4M in Marseille, France."
   },
   plugins: [
     {

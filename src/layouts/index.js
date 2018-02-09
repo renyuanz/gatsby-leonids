@@ -1,19 +1,19 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import '../style/app.scss'
+import avatarPic from '../components/avatar.jpg'
 
 class Template extends React.Component {
   render() {
-    const { location, children } = this.props
+    const { location, children, data } = this.props
     const sidebar = (
       <div className="cover-card table-cell table-middle">
-
-        <img src="" alt="" className="avatar" />
+        <img src={avatarPic} className="avatar" />
         <Link to="/" className="author_name">
-          name
+          {data.site.siteMetadata.author}
         </Link>
-        <span className="author_job">job</span>
-        <span className="author_bio mbm">bio</span>
+        <span className="author_job">{data.site.siteMetadata.job}</span>
+        <span className="author_bio mbm">{data.site.siteMetadata.bio}</span>
         <nav className="nav">
           <ul className="nav-list">
             <li className="nav-item">
@@ -47,3 +47,16 @@ Template.propTypes = {
 }
 
 export default Template
+
+export const query = graphql`
+  query layoutQuery {
+    site {
+      siteMetadata {
+        title
+        author
+        job
+        bio
+      }
+    }
+  }
+`;
